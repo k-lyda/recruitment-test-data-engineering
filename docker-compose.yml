@@ -14,6 +14,22 @@ services:
       - "3306:3306"
     restart: always
 
+  ingestion-container:
+    image: ingestion-container
+    build: images/ingestion-container
+    environment:
+      - PYTHONIOENCODING=utf-8
+    volumes:
+      - ./data:/data
+
+  summary-container:
+    image: summary-container
+    build: images/summary-container
+    environment:
+      - PYTHONIOENCODING=utf-8
+    volumes:
+      - ./data:/data
+
   example-c:
     image: example-c
     build: images/example-c
