@@ -18,7 +18,7 @@ def extract_summary_to_json(mysql_conn):
 def get_db_connection():
     # connect to the database
     engine = sqlalchemy.create_engine(
-        "mysql://codetest:swordfish@database/codetes?charset=utf8mb4"
+        "mysql://codetest:swordfish@database/codetest?charset=utf8mb4"
     )
     connection = engine.connect()
     return connection
